@@ -1,5 +1,8 @@
 # GraphRAG Setup for Enterprise Architecture Documentation
 
+<!-- Insert SVG here -->
+![Diagram](./ea-assistant-arch.drawio.svg)
+
 This README explains how to set up and customize GraphRAG for processing and analyzing this application.
 
 ## Initial Setup and Deployment
