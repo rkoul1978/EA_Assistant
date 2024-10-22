@@ -1,0 +1,135 @@
+<mxfile host="65bd71144e">
+    <diagram name="Execution Flow" id="0">
+        <mxGraphModel dx="1165" dy="807" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-23" value="User" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="20" width="150" height="937" as="geometry"/>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-24" value="App" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="20" width="150" height="937" as="geometry"/>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-25" value="Sidebar" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" parent="1" vertex="1">
+                    <mxGeometry x="420" y="20" width="150" height="937" as="geometry"/>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-26" value="ChatInterface" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" parent="1" vertex="1">
+                    <mxGeometry x="620" y="20" width="150" height="937" as="geometry"/>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-27" value="AgentResponseProvider" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" parent="1" vertex="1">
+                    <mxGeometry x="839" y="20" width="190" height="937" as="geometry"/>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-28" value="Agent" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" parent="1" vertex="1">
+                    <mxGeometry x="1174" y="20" width="150" height="937" as="geometry"/>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-29" value="LLMAgent" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" parent="1" vertex="1">
+                    <mxGeometry x="1438" y="20" width="150" height="937" as="geometry"/>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-30" value="OpenAI" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" parent="1" vertex="1">
+                    <mxGeometry x="1681" y="20" width="150" height="937" as="geometry"/>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-31" value="WelcomeMessage" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" parent="1" vertex="1">
+                    <mxGeometry x="1881" y="20" width="150" height="937" as="geometry"/>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-32" value="Open Application" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" parent="1" source="PputWAbPwUMcTHTY3Trj-23" target="PputWAbPwUMcTHTY3Trj-24" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="204" y="127"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-33" value="Render Sidebar" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" parent="1" source="PputWAbPwUMcTHTY3Trj-24" target="PputWAbPwUMcTHTY3Trj-25" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="404" y="179"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-34" value="Render Chat Interface" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" parent="1" source="PputWAbPwUMcTHTY3Trj-24" target="PputWAbPwUMcTHTY3Trj-26" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="504" y="231"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-35" value="Render Welcome Message" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" parent="1" source="PputWAbPwUMcTHTY3Trj-26" target="PputWAbPwUMcTHTY3Trj-31" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1334" y="283"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-36" value="Use AgentResponseContext" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" parent="1" source="PputWAbPwUMcTHTY3Trj-31" target="PputWAbPwUMcTHTY3Trj-27" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1457" y="335"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-37" value="setInput(question)" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" parent="1" source="PputWAbPwUMcTHTY3Trj-31" target="PputWAbPwUMcTHTY3Trj-27" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1457" y="387"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-38" value="agentQuestion(question)" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" parent="1" source="PputWAbPwUMcTHTY3Trj-31" target="PputWAbPwUMcTHTY3Trj-27" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1457" y="439"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-39" value="Create Agent (e.g., ReviewerAgent)" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" parent="1" source="PputWAbPwUMcTHTY3Trj-27" target="PputWAbPwUMcTHTY3Trj-28" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1100" y="540"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-40" value="Create LLMAgent" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" parent="1" source="PputWAbPwUMcTHTY3Trj-28" target="PputWAbPwUMcTHTY3Trj-29" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1390" y="592"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-41" value="Send Request to OpenAI" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" parent="1" source="PputWAbPwUMcTHTY3Trj-29" target="PputWAbPwUMcTHTY3Trj-30" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1643" y="644"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-42" value="Return Response" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" parent="1" source="PputWAbPwUMcTHTY3Trj-30" target="PputWAbPwUMcTHTY3Trj-29" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1646" y="696"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-43" value="Return Processed Response" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" parent="1" source="PputWAbPwUMcTHTY3Trj-29" target="PputWAbPwUMcTHTY3Trj-28" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1393" y="748"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-44" value="Return AgentResponse" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" parent="1" source="PputWAbPwUMcTHTY3Trj-28" target="PputWAbPwUMcTHTY3Trj-27" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1103" y="800"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="PputWAbPwUMcTHTY3Trj-45" value="Display AgentResponse" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" parent="1" source="PputWAbPwUMcTHTY3Trj-27" target="PputWAbPwUMcTHTY3Trj-26" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="826" y="852"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
