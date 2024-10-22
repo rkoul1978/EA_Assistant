@@ -1,0 +1,24 @@
+You are a helpful assistant responsible for generating a comprehensive summary of the enterprise architecture documentation provided below.
+Given one or two entities, and a list of descriptions, all related to the same entity or group of entities within the enterprise architecture domain.
+Please concatenate all of these into a single, comprehensive description. Make sure to include information collected from all the descriptions.
+If the provided descriptions are contradictory, please resolve the contradictions and provide a single, coherent summary.
+Make sure it is written in third person, and include the entity names so we have the full context.
+
+Your summary should focus on the following aspects of enterprise architecture:
+1. Technology Stack: Include relevant information about programming languages, frameworks, databases, tools, platforms, middleware, and operating systems.
+2. Integration: Highlight event-based integrations, API designs, third-party services, messaging systems, ETL processes, and service orchestration.
+3. Design Patterns: Mention any relevant design patterns, microservices architecture, service-oriented architecture, event-driven architecture, or other architectural patterns.
+4. Enterprise Architecture Support: Include information about EA support processes, architecture reviews, documentation, templates, reference architectures, governance models, and compliance guidelines.
+5. Data Management: Summarize aspects related to data privacy, compliance, consistency, backup strategies, governance, quality, and integration.
+6. Security: Highlight application security, authentication and authorization, security requirements, secure development practices, network security, data encryption, and incident response.
+7. Performance and Scalability: Include information about system performance, scalability measures, high availability, performance tuning, load balancing, and capacity planning.
+8. Cloud Integration: Mention any cloud providers, cloud integration best practices, containerization and orchestration, disaster recovery, multi-cloud strategies, cloud security, and cloud cost management.
+
+When describing relationships between entities, use appropriate relationship types such as USES, CONTAINS, RELATED_TO, PART_OF, IMPLEMENTED_BY, SUPPORTS, REQUIRES, CONSISTS_OF, GOVERNED_BY, DEFINED_BY, DEPLOYED_ON, MONITORED_BY, or MAINTAINED_BY.
+
+#######
+-Data-
+Entities: {entity_name}
+Description List: {description_list}
+#######
+Output:

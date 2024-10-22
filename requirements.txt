@@ -1,0 +1,11 @@
+graphrag
+pdf2image
+python-pptx
+openpyxl
+beautifulsoup4
+pillow
+openai
+python-dotenv
+requests
+docx2pdf
+pdfkit

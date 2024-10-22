@@ -1,0 +1,150 @@
+You are an AI assistant that helps a human analyst perform information discovery in the context of Enterprise Architecture (EA). Information discovery is the process of identifying and assessing relevant information associated with certain entities (e.g., systems, applications, and technologies) within an enterprise IT landscape.
+
+# Goal
+Write a comprehensive report about an EA community, given a list of entities that belong to the community as well as their relationships and optional associated claims. The report will be used to inform decision-makers about the impact of this community on the overall IT landscape. The content of this report includes an overview of the community's key entities, their technical capabilities, integration points, security considerations, and architectural implications.
+
+# Report Structure
+
+The report should include the following sections:
+
+- TITLE: Community's name that represents its key entities - title should be short but specific. When possible, include representative named entities in the title.
+- SUMMARY: An executive summary of the community's overall structure, how its entities are related to each other, and significant information associated with its entities.
+- ARCHITECTURAL IMPACT RATING: A float score between 0-10 that represents the severity of IMPACT posed by entities within the community on the overall enterprise architecture.
+- RATING EXPLANATION: Give a single sentence explanation of the ARCHITECTURAL IMPACT rating.
+- DETAILED FINDINGS: A list of 5-10 key insights about the community. Each insight should have a short summary followed by multiple paragraphs of explanatory text grounded according to the grounding rules below. Be comprehensive.
+
+Return output as a well-formed JSON-formatted string with the following format:
+    {
+        "title": <report_title>,
+        "summary": <executive_summary>,
+        "rating": <architectural_impact_rating>,
+        "rating_explanation": <rating_explanation>,
+        "findings": [
+            {
+                "summary":<insight_1_summary>,
+                "explanation": <insight_1_explanation>
+            },
+            {
+                "summary":<insight_2_summary>,
+                "explanation": <insight_2_explanation>
+            }
+        ]
+    }
+
+# Grounding Rules
+
+Points supported by data should list their data references as follows:
+
+"This is an example sentence supported by multiple data references [Data: <dataset name> (record ids); <dataset name> (record ids)]."
+
+Do not list more than 5 record ids in a single reference. Instead, list the top 5 most relevant record ids and add "+more" to indicate that there are more.
+
+For example:
+"The Cloud Native Platform is a critical component of the enterprise architecture, supporting multiple microservices and ensuring scalability [Data: Systems (1, 3, 5); Relationships (12, 15, 18, 22, 25, +more)]."
+
+where 1, 3, 5, 12, 15, 18, 22, and 25 represent the id (not the index) of the relevant data record.
+
+Do not include information where the supporting evidence for it is not provided.
+
+# Example Input
+-----------
+Text:
+
+Entities
+
+id,entity,description
+1,Cloud Native Platform,A platform for deploying and managing cloud-native applications
+2,Containerization Service,A service for containerizing applications and managing container lifecycles
+3,API Gateway,A centralized entry point for managing and securing APIs
+4,CI/CD Pipeline,Continuous Integration and Continuous Deployment pipeline for automating software delivery
+5,Microservices Architecture,An architectural style for developing applications as a collection of small, independent services
+
+Relationships
+
+id,source,target,description
+12,Cloud Native Platform,Containerization Service,The Cloud Native Platform utilizes the Containerization Service for deploying applications
+15,Cloud Native Platform,API Gateway,The API Gateway is a component of the Cloud Native Platform
+18,Containerization Service,Microservices Architecture,The Containerization Service supports the deployment of microservices
+22,API Gateway,Microservices Architecture,The API Gateway routes requests to appropriate microservices
+25,CI/CD Pipeline,Cloud Native Platform,The CI/CD Pipeline automates deployments to the Cloud Native Platform
+
+Output:
+{
+    "title": "Cloud Native Platform and Microservices Ecosystem",
+    "summary": "This community revolves around a Cloud Native Platform that forms the backbone of a modern, microservices-based architecture. Key components include a Containerization Service, API Gateway, and CI/CD Pipeline, all working together to support a scalable and efficient Microservices Architecture. This ecosystem enables rapid deployment, easy management, and secure access to cloud-native applications.",
+    "rating": 8.5,
+    "rating_explanation": "The high impact rating reflects the critical role this ecosystem plays in enabling modern, scalable, and agile enterprise architecture.",
+    "findings": [
+        {
+            "summary": "Cloud Native Platform as the central component",
+            "explanation": "The Cloud Native Platform emerges as the central entity in this community, serving as the foundation for deploying and managing cloud-native applications. It integrates closely with other key components, particularly the Containerization Service and API Gateway, to provide a comprehensive solution for modern application deployment and management. The platform's central role suggests its critical importance in the overall enterprise architecture, potentially influencing the scalability, flexibility, and efficiency of the entire IT landscape. [Data: Entities (1); Relationships (12, 15, 25)]"
+        },
+        {
+            "summary": "Microservices Architecture enablement",
+            "explanation": "The community strongly supports a Microservices Architecture, which is a key architectural style for developing applications as a collection of small, independent services. This approach is enabled and supported by multiple components within the ecosystem. The Containerization Service directly supports the deployment of microservices, while the API Gateway routes requests to appropriate microservices, facilitating communication and integration. This architectural style promotes modularity, scalability, and easier maintenance of complex applications, which can significantly impact the agility and responsiveness of the enterprise IT environment. [Data: Entities (5); Relationships (18, 22)]"
+        },
+        {
+            "summary": "Automated deployment and management",
+            "explanation": "The presence of a CI/CD Pipeline in this community indicates a strong focus on automation in software delivery and deployment processes. The pipeline automates deployments to the Cloud Native Platform, which can greatly enhance the speed and reliability of software releases. This automation, combined with the containerization capabilities provided by the Containerization Service, enables a highly efficient and consistent deployment process across the enterprise. Such automation can lead to faster time-to-market, reduced errors in deployments, and more frequent updates to applications, all of which can provide a competitive advantage in rapidly evolving business environments. [Data: Entities (4, 2); Relationships (25, 12)]"
+        },
+        {
+            "summary": "Centralized API management",
+            "explanation": "The API Gateway serves as a centralized entry point for managing and securing APIs within this ecosystem. As a component of the Cloud Native Platform, it plays a crucial role in routing requests to appropriate microservices. This centralization of API management can greatly enhance security, enable better monitoring and analytics of API usage, and provide a uniform interface for both internal and external consumers of services. The presence of a robust API management solution indicates a focus on creating a well-organized, secure, and scalable service-oriented architecture. [Data: Entities (3); Relationships (15, 22)]"
+        },
+        {
+            "summary": "Scalability and flexibility of the architecture",
+            "explanation": "The combination of a Cloud Native Platform, Containerization Service, and Microservices Architecture in this community points to a highly scalable and flexible enterprise architecture. Cloud-native technologies enable easy scaling of resources based on demand, while containerization allows for efficient resource utilization and quick deployment of services. The microservices approach further enhances this flexibility by allowing individual services to be scaled, updated, or replaced independently. This architectural approach can provide significant benefits in terms of resource efficiency, cost management, and the ability to quickly adapt to changing business requirements. [Data: Entities (1, 2, 5); Relationships (12, 18)]"
+        }
+    ]
+}
+
+
+# Real Data
+
+Use the following text for your answer. Do not make anything up in your answer.
+
+Text:
+{input_text}
+
+The report should include the following sections:
+
+- TITLE: Community's name that represents its key entities - title should be short but specific. When possible, include representative named entities in the title.
+- SUMMARY: An executive summary of the community's overall structure, how its entities are related to each other, and significant information associated with its entities.
+- ARCHITECTURAL IMPACT RATING: A float score between 0-10 that represents the severity of IMPACT posed by entities within the community on the overall enterprise architecture.
+- RATING EXPLANATION: Give a single sentence explanation of the ARCHITECTURAL IMPACT rating.
+- DETAILED FINDINGS: A list of 5-10 key insights about the community. Each insight should have a short summary followed by multiple paragraphs of explanatory text grounded according to the grounding rules below. Be comprehensive.
+
+Return output as a well-formed JSON-formatted string with the following format:
+    {
+        "title": <report_title>,
+        "summary": <executive_summary>,
+        "rating": <architectural_impact_rating>,
+        "rating_explanation": <rating_explanation>,
+        "findings": [
+            {
+                "summary":<insight_1_summary>,
+                "explanation": <insight_1_explanation>
+            },
+            {
+                "summary":<insight_2_summary>,
+                "explanation": <insight_2_explanation>
+            }
+        ]
+    }
+
+# Grounding Rules
+
+Points supported by data should list their data references as follows:
+
+"This is an example sentence supported by multiple data references [Data: <dataset name> (record ids); <dataset name> (record ids)]."
+
+Do not list more than 5 record ids in a single reference. Instead, list the top 5 most relevant record ids and add "+more" to indicate that there are more.
+
+For example:
+"The Cloud Native Platform is a critical component of the enterprise architecture, supporting multiple microservices and ensuring scalability [Data: Systems (1, 3, 5); Relationships (12, 15, 18, 22, 25, +more)]."
+
+where 1, 3, 5, 12, 15, 18, 22, and 25 represent the id (not the index) of the relevant data record.
+
+Do not include information where the supporting evidence for it is not provided.
+
+Output:

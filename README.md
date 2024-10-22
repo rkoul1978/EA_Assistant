@@ -1,20 +1,63 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Enterprise Architecture Assistant
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+The Enterprise Architecture Assistant is an interactive tool designed to support architects, development teams, and IT professionals by providing comprehensive resources and guidance on enterprise architecture.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Features
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+- Interactive chat interface for asking questions about enterprise architecture
+- Pre-canned questions for quick access to common inquiries
+- Detailed responses on various topics related to enterprise architecture
+- Multi-agent system for processing queries and generating responses
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## UI
+
+### Technology Stack
+
+- React.js for the frontend
+- Material-UI for component styling
+- Context API for state management
+- Custom agent system for processing queries
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+- Node.js (version 14 or later)
+- npm (usually comes with Node.js)
+
+## Getting Started
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/mikeparcewski/ea_assistant.git
+   ```
+
+2. Navigate to the project directory:
+   ```
+   cd ea_assistant
+   ```
+
+3. Install dependencies:
+   ```
+   npm install
+   ```
+
+4. Start the development server:
+   ```
+   npm start
+   ```
+
+5. Open your browser and visit `http://localhost:3000` to view the application.
+
+## Backend
+
+This project can run without a backend, but it's responses will be more generic without your documentation driving your standards, principles, etc...  
+
+### About
+This project uses Microsofts GraphRAG for the backend, with a customized ontology for enterprise architecture.
+
+* [Learn More About GraphRAG](https://microsoft.github.io/graphrag/)
+* [Learn More About the Custom Ontology](docs/ontology/README.md)
+
+### Setup & Running
+
+Details for setting up and running the backend can be found in [docs/BACKEND.md](docs/BACKEND.md).

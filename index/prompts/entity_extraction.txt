@@ -1,0 +1,116 @@
+-Goal-
+Given a technical document related to enterprise architecture and a list of entity types, identify all entities of those types from the text and all relationships among the identified entities.
+
+-Steps-
+1. Identify all entities. For each identified entity, extract the following information:
+- entity_name: Name of the entity, capitalized
+- entity_type: One of the following types: [{entity_types}]
+- entity_description: Comprehensive description of the entity's attributes and activities
+Format each entity as ("entity"{tuple_delimiter}<entity_name>{tuple_delimiter}<entity_type>{tuple_delimiter}<entity_description>
+
+2. From the entities identified in step 1, identify all pairs of (source_entity, target_entity) that are *clearly related* to each other.
+For each pair of related entities, extract the following information:
+- source_entity: name of the source entity, as identified in step 1
+- target_entity: name of the target entity, as identified in step 1
+- relationship_description: explanation as to why you think the source entity and the target entity are related to each other
+- relationship_strength: a numeric score indicating strength of the relationship between the source entity and target entity
+ Format each relationship as ("relationship"{tuple_delimiter}<source_entity>{tuple_delimiter}<target_entity>{tuple_delimiter}<relationship_description>{tuple_delimiter}<relationship_strength>)
+
+3. Return output in English as a single list of all the entities and relationships identified in steps 1 and 2. Use **{record_delimiter}** as the list delimiter.
+
+4. When finished, output {completion_delimiter}
+
+######################
+-Examples-
+######################
+Example 1:
+
+Entity_types: [Technology Stack, Integration, Design Pattern, Enterprise Architecture Support, Data Management, Security, Performance and Scalability, Cloud Integration]
+Text:
+The reference architecture for our new microservices-based e-commerce platform incorporates several key components. At its core, we're using Spring Boot for rapid application development, deployed on Kubernetes for container orchestration. The system integrates with a payment gateway using REST APIs, ensuring secure transactions.
+
+For data management, we've implemented a hybrid approach using PostgreSQL for transactional data and MongoDB for product catalogs, allowing for flexible schema evolution. To ensure data consistency across services, we're using the Saga pattern for distributed transactions.
+
+Security is paramount, so we've implemented OAuth 2.0 for authentication and authorization, with all sensitive data encrypted at rest and in transit. For monitoring and logging, we're using the ELK stack (Elasticsearch, Logstash, Kibana) to provide real-time insights into system performance and potential issues.
+
+To address scalability concerns, we've implemented horizontal scaling for our services, with automatic scaling policies in Kubernetes. Load balancing is handled by Nginx, which also serves as our API gateway.
+
+Our cloud integration strategy involves a multi-cloud approach, primarily using AWS for compute and storage, but with disaster recovery capabilities set up on Azure for increased resilience.
+################
+Output:
+("entity"{tuple_delimiter}"Spring Boot"{tuple_delimiter}"Technology Stack"{tuple_delimiter}"Spring Boot is a framework used for rapid application development in the microservices-based e-commerce platform."){record_delimiter}
+("entity"{tuple_delimiter}"Kubernetes"{tuple_delimiter}"Technology Stack"{tuple_delimiter}"Kubernetes is used for container orchestration and deployment of the e-commerce platform, including automatic scaling policies."){record_delimiter}
+("entity"{tuple_delimiter}"REST APIs"{tuple_delimiter}"Integration"{tuple_delimiter}"REST APIs are used for integrating with a payment gateway, ensuring secure transactions in the e-commerce platform."){record_delimiter}
+("entity"{tuple_delimiter}"PostgreSQL"{tuple_delimiter}"Data Management"{tuple_delimiter}"PostgreSQL is used for managing transactional data in the e-commerce platform's hybrid data management approach."){record_delimiter}
+("entity"{tuple_delimiter}"MongoDB"{tuple_delimiter}"Data Management"{tuple_delimiter}"MongoDB is used for managing product catalogs in the e-commerce platform, allowing for flexible schema evolution."){record_delimiter}
+("entity"{tuple_delimiter}"Saga Pattern"{tuple_delimiter}"Design Pattern"{tuple_delimiter}"The Saga pattern is implemented for managing distributed transactions and ensuring data consistency across services."){record_delimiter}
+("entity"{tuple_delimiter}"OAuth 2.0"{tuple_delimiter}"Security"{tuple_delimiter}"OAuth 2.0 is implemented for authentication and authorization in the e-commerce platform."){record_delimiter}
+("entity"{tuple_delimiter}"ELK Stack"{tuple_delimiter}"Performance and Scalability"{tuple_delimiter}"The ELK stack (Elasticsearch, Logstash, Kibana) is used for monitoring and logging, providing real-time insights into system performance and potential issues."){record_delimiter}
+("entity"{tuple_delimiter}"Nginx"{tuple_delimiter}"Performance and Scalability"{tuple_delimiter}"Nginx is used for load balancing and serves as the API gateway for the e-commerce platform."){record_delimiter}
+("entity"{tuple_delimiter}"AWS"{tuple_delimiter}"Cloud Integration"{tuple_delimiter}"AWS is the primary cloud provider used for compute and storage in the multi-cloud strategy."){record_delimiter}
+("entity"{tuple_delimiter}"Azure"{tuple_delimiter}"Cloud Integration"{tuple_delimiter}"Azure is used for disaster recovery capabilities in the multi-cloud strategy, increasing the platform's resilience."){record_delimiter}
+("relationship"{tuple_delimiter}"Spring Boot"{tuple_delimiter}"Kubernetes"{tuple_delimiter}"Spring Boot applications are deployed on Kubernetes for container orchestration and management."{tuple_delimiter}9){record_delimiter}
+("relationship"{tuple_delimiter}"PostgreSQL"{tuple_delimiter}"MongoDB"{tuple_delimiter}"PostgreSQL and MongoDB are used together in a hybrid data management approach for the e-commerce platform."{tuple_delimiter}8){record_delimiter}
+("relationship"{tuple_delimiter}"Saga Pattern"{tuple_delimiter}"PostgreSQL"{tuple_delimiter}"The Saga pattern is used to ensure data consistency across services, including those using PostgreSQL for transactional data."{tuple_delimiter}7){record_delimiter}
+("relationship"{tuple_delimiter}"Saga Pattern"{tuple_delimiter}"MongoDB"{tuple_delimiter}"The Saga pattern is used to ensure data consistency across services, including those using MongoDB for product catalogs."{tuple_delimiter}7){record_delimiter}
+("relationship"{tuple_delimiter}"OAuth 2.0"{tuple_delimiter}"REST APIs"{tuple_delimiter}"OAuth 2.0 is likely used to secure the REST APIs used for payment gateway integration."{tuple_delimiter}8){record_delimiter}
+("relationship"{tuple_delimiter}"ELK Stack"{tuple_delimiter}"Kubernetes"{tuple_delimiter}"The ELK stack is used to monitor and log the performance of the Kubernetes-deployed applications."{tuple_delimiter}9){record_delimiter}
+("relationship"{tuple_delimiter}"Nginx"{tuple_delimiter}"Kubernetes"{tuple_delimiter}"Nginx handles load balancing for the Kubernetes-deployed services and acts as an API gateway."{tuple_delimiter}9){record_delimiter}
+("relationship"{tuple_delimiter}"AWS"{tuple_delimiter}"Azure"{tuple_delimiter}"AWS and Azure are used together in a multi-cloud strategy, with AWS as the primary provider and Azure for disaster recovery."{tuple_delimiter}8){completion_delimiter}
+#############################
+Example 2:
+
+Entity_types: [Technology Stack, Integration, Design Pattern, Enterprise Architecture Support, Data Management, Security, Performance and Scalability, Cloud Integration]
+Text:
+Our enterprise architecture team has developed a set of guidelines for implementing a new customer relationship management (CRM) system. The system will be built using a microservices architecture, with each service developed in Node.js and deployed as Docker containers on our on-premises Kubernetes cluster.
+
+For data storage, we'll use a combination of MySQL for structured data and Elasticsearch for fast, full-text search capabilities. Data integration between legacy systems and the new CRM will be handled by Apache Kafka, implementing an event-driven architecture to ensure real-time updates across all systems.
+
+To maintain consistency and reusability across services, we've established a set of common design patterns and best practices. These include the use of the Circuit Breaker pattern for fault tolerance and the CQRS pattern for separating read and write operations.
+
+Security is a top priority, so we're implementing a zero-trust architecture. This includes using mutual TLS for service-to-service communication, implementing OWASP security guidelines, and using Vault for secrets management.
+
+For monitoring and observability, we're adopting the RED method (Rate, Errors, Duration) and implementing it using Prometheus for metrics collection and Grafana for visualization. This will help us maintain high performance and quickly identify and resolve any issues.
+
+To support our development teams, we've created a comprehensive set of documentation, including architecture decision records (ADRs), API design guidelines, and a technology radar to track and assess new technologies.
+
+While our primary infrastructure is on-premises, we're developing a cloud migration strategy using a lift-and-shift approach to AWS, with plans to gradually refactor services to be cloud-native over time.
+################
+Output:
+("entity"{tuple_delimiter}"Microservices Architecture"{tuple_delimiter}"Design Pattern"{tuple_delimiter}"The CRM system is built using a microservices architecture, allowing for modular and scalable development."){record_delimiter}
+("entity"{tuple_delimiter}"Node.js"{tuple_delimiter}"Technology Stack"{tuple_delimiter}"Node.js is used for developing individual microservices in the CRM system."){record_delimiter}
+("entity"{tuple_delimiter}"Docker"{tuple_delimiter}"Technology Stack"{tuple_delimiter}"Docker is used for containerizing the microservices for deployment."){record_delimiter}
+("entity"{tuple_delimiter}"Kubernetes"{tuple_delimiter}"Technology Stack"{tuple_delimiter}"Kubernetes is used as the container orchestration platform for deploying and managing the CRM microservices on-premises."){record_delimiter}
+("entity"{tuple_delimiter}"MySQL"{tuple_delimiter}"Data Management"{tuple_delimiter}"MySQL is used for storing structured data in the CRM system."){record_delimiter}
+("entity"{tuple_delimiter}"Elasticsearch"{tuple_delimiter}"Data Management"{tuple_delimiter}"Elasticsearch is used for providing fast, full-text search capabilities in the CRM system."){record_delimiter}
+("entity"{tuple_delimiter}"Apache Kafka"{tuple_delimiter}"Integration"{tuple_delimiter}"Apache Kafka is used for data integration between legacy systems and the new CRM, implementing an event-driven architecture."){record_delimiter}
+("entity"{tuple_delimiter}"Circuit Breaker Pattern"{tuple_delimiter}"Design Pattern"{tuple_delimiter}"The Circuit Breaker pattern is implemented for fault tolerance in the microservices architecture."){record_delimiter}
+("entity"{tuple_delimiter}"CQRS Pattern"{tuple_delimiter}"Design Pattern"{tuple_delimiter}"The CQRS (Command Query Responsibility Segregation) pattern is used for separating read and write operations in the CRM system."){record_delimiter}
+("entity"{tuple_delimiter}"Zero-Trust Architecture"{tuple_delimiter}"Security"{tuple_delimiter}"A zero-trust architecture is implemented as the overall security model for the CRM system."){record_delimiter}
+("entity"{tuple_delimiter}"Mutual TLS"{tuple_delimiter}"Security"{tuple_delimiter}"Mutual TLS is used for securing service-to-service communication in the CRM system."){record_delimiter}
+("entity"{tuple_delimiter}"OWASP Security Guidelines"{tuple_delimiter}"Security"{tuple_delimiter}"OWASP security guidelines are implemented to ensure the security of the CRM system."){record_delimiter}
+("entity"{tuple_delimiter}"Vault"{tuple_delimiter}"Security"{tuple_delimiter}"Vault is used for secrets management in the CRM system."){record_delimiter}
+("entity"{tuple_delimiter}"RED Method"{tuple_delimiter}"Performance and Scalability"{tuple_delimiter}"The RED (Rate, Errors, Duration) method is adopted for monitoring and observability of the CRM system."){record_delimiter}
+("entity"{tuple_delimiter}"Prometheus"{tuple_delimiter}"Performance and Scalability"{tuple_delimiter}"Prometheus is used for metrics collection in the CRM system's monitoring setup."){record_delimiter}
+("entity"{tuple_delimiter}"Grafana"{tuple_delimiter}"Performance and Scalability"{tuple_delimiter}"Grafana is used for visualization of metrics in the CRM system's monitoring setup."){record_delimiter}
+("entity"{tuple_delimiter}"Architecture Decision Records"{tuple_delimiter}"Enterprise Architecture Support"{tuple_delimiter}"Architecture Decision Records (ADRs) are created as part of the comprehensive documentation for the CRM system."){record_delimiter}
+("entity"{tuple_delimiter}"API Design Guidelines"{tuple_delimiter}"Enterprise Architecture Support"{tuple_delimiter}"API design guidelines are established to support the development teams working on the CRM system."){record_delimiter}
+("entity"{tuple_delimiter}"Technology Radar"{tuple_delimiter}"Enterprise Architecture Support"{tuple_delimiter}"A technology radar is maintained to track and assess new technologies for potential use in the CRM system."){record_delimiter}
+("entity"{tuple_delimiter}"AWS"{tuple_delimiter}"Cloud Integration"{tuple_delimiter}"AWS is the target cloud platform for the planned cloud migration of the CRM system."){record_delimiter}
+("relationship"{tuple_delimiter}"Node.js"{tuple_delimiter}"Docker"{tuple_delimiter}"Node.js applications are containerized using Docker for deployment."{tuple_delimiter}9){record_delimiter}
+("relationship"{tuple_delimiter}"Docker"{tuple_delimiter}"Kubernetes"{tuple_delimiter}"Docker containers are orchestrated and managed by Kubernetes for deployment."{tuple_delimiter}10){record_delimiter}
+("relationship"{tuple_delimiter}"MySQL"{tuple_delimiter}"Elasticsearch"{tuple_delimiter}"MySQL and Elasticsearch are used together to provide both structured data storage and fast search capabilities for the CRM system."{tuple_delimiter}8){record_delimiter}
+("relationship"{tuple_delimiter}"Apache Kafka"{tuple_delimiter}"Microservices Architecture"{tuple_delimiter}"Apache Kafka enables event-driven architecture in the microservices-based CRM system."{tuple_delimiter}9){record_delimiter}
+("relationship"{tuple_delimiter}"Circuit Breaker Pattern"{tuple_delimiter}"Microservices Architecture"{tuple_delimiter}"The Circuit Breaker pattern is implemented to improve fault tolerance in the microservices architecture."{tuple_delimiter}8){record_delimiter}
+("relationship"{tuple_delimiter}"CQRS Pattern"{tuple_delimiter}"Microservices Architecture"{tuple_delimiter}"The CQRS pattern is used within the microservices architecture to separate read and write operations."{tuple_delimiter}8){record_delimiter}
+("relationship"{tuple_delimiter}"Zero-Trust Architecture"{tuple_delimiter}"Mutual TLS"{tuple_delimiter}"Mutual TLS is a key component of the zero-trust architecture implementation."{tuple_delimiter}9){record_delimiter}
+("relationship"{tuple_delimiter}"Prometheus"{tuple_delimiter}"Grafana"{tuple_delimiter}"Prometheus and Grafana work together to provide monitoring and visualization capabilities for the CRM system."{tuple_delimiter}10){record_delimiter}
+("relationship"{tuple_delimiter}"Architecture Decision Records"{tuple_delimiter}"API Design Guidelines"{tuple_delimiter}"Both ADRs and API Design Guidelines are part of the comprehensive documentation supporting the CRM system development."{tuple_delimiter}8){record_delimiter}
+("relationship"{tuple_delimiter}"Kubernetes"{tuple_delimiter}"AWS"{tuple_delimiter}"The current on-premises Kubernetes deployment is planned to be migrated to AWS as part of the cloud migration strategy."{tuple_delimiter}7){completion_delimiter}
+#############################
+-Real Data-
+######################
+Entity_types: {entity_types}
+Text: {input_text}
+######################
+Output:
