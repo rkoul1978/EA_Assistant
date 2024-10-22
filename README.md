@@ -28,7 +28,7 @@ Before you begin, ensure you have the following installed:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/mikeparcewski/ea_assistant.git
+   git clone https://atcgenai@dev.azure.com/atcgenai/ea_assistant/_git/ea_assistant
    ```
 
 2. Navigate to the project directory:
