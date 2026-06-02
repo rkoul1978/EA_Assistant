@@ -17,7 +17,7 @@ For initial setup and deployment of GraphRAG, please refer to the official docum
   ```
 3. Activate it
   ```
-  source ea_assistant/bin/activate
+  ea_assistant/Scripts/activate
   ```
 4. Install dependencies
   ```

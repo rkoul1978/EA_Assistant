@@ -103,7 +103,7 @@ def describe_images(image_data_list, api_key):
 
             logging.info(f"Sending batch of {len(batch)} images to OpenAI for description")
             payload = {
-                "model": "gpt-4o",
+                "model": "gpt-4o-mini",
                 "messages": [
                     {
                         "role": "user",

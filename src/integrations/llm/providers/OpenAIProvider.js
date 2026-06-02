@@ -4,6 +4,7 @@ import ModelProvider from './ModelProvider';
 // Check if the API key is set
 const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
 
+
 if (!API_KEY) {
   throw new Error('REACT_APP_OPENAI_API_KEY is not set in the environment variables.');
 }
@@ -50,7 +51,7 @@ class OpenAIProvider extends ModelProvider {
 
     const requestOptions = {
       messages,
-      model: additionalOptions?.model || 'gpt-4o',
+      model: additionalOptions?.model || 'gpt-3.5-turbo',
       temperature: temperature,
       ...additionalOptions,
     };
